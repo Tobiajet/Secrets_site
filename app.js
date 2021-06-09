@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-mongoose.connect("mongodb+srv://dbUser:adeyemi1@cluster0.azvyb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{useNewUrlParser: true});
+mongoose.connect(`mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@cluster0.azvyb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,{useNewUrlParser: true});
 
 //create special schema because of mongoose encryptio
 const userSchema = new mongoose.Schema({
